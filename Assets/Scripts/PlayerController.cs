@@ -73,6 +73,11 @@ public class PlayerController : MonoBehaviour
         ECS_AppManager.instance.AddPlayerEntity();
     }
 
+    #region ECS
+
+
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +88,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //---InputSection-------------------------------------
+    #region inputs
     private void OnShoot()
     {
 
@@ -196,7 +202,7 @@ public class PlayerController : MonoBehaviour
 
         FPfireBullet.SwitchWeapon();
     }
-
+    #endregion
 
 
     // Update is called once per frame ------------------
@@ -337,7 +343,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //---PowerUpFunctions------------------------------
-
+    #region powerups
     public void PowerUpIncreasePower(float duration, float multiplier)
     {
         StartCoroutine(PowerUpIncreasePowerRoutine(duration, multiplier));
@@ -417,12 +423,10 @@ public class PlayerController : MonoBehaviour
         FPfireBullet.shootSpeedMultiplier = 1f;
     }
 
-
-
     public void OnItemPickup(string itemName)
     {
         FPfireBullet.SendMessage("OnItemPickup", itemName);
     }
-
+    #endregion
 
 }

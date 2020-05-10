@@ -58,4 +58,9 @@ public class ECS_AppManager : MonoBehaviour
         NMCalc.CalculatePath(entity);
     }
 
+    public void AddPlayerEntity()
+    {
+
+    }
+
 }
